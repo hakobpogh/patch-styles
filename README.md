@@ -2,7 +2,7 @@
 
 > auto patch css/scss modules to children
 
-[![NPM](https://img.shields.io/npm/v/patch-styles.svg)](https://www.npmjs.com/package/patch-classes) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+[![NPM](https://img.shields.io/npm/v/patch-styles.svg)](https://www.npmjs.com/package/patch-styles) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
 ## Install
 
@@ -19,7 +19,7 @@ import MyComponent from 'patch-styles'
 import 'patch-styles/dist/index.css'
 
 class Example extends Component {
-  render() {
+  render() {;
     return <MyComponent />
   }
 }

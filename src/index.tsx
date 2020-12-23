@@ -1,10 +1,22 @@
-import * as React from 'react'
-import styles from './styles.module.css'
+import React, { FC, PropsWithChildren } from 'react';
+import { ClassNamesMap } from './utils';
+import patchClassNamesOfChildren from './patch-class-names';
 
-interface Props {
-  text: string
+export interface Props {
+  classNames: ClassNamesMap;
 }
 
-export const ExampleComponent = ({ text }: Props) => {
-  return <div className={styles.test}>Example Component: {text}</div>
-}
+const PatchClasses: FC<PropsWithChildren<Props>> = ({ classNames, children }) => {
+  if (!children) {
+    throw new Error('ApplyStyles should always have children to apply styles too');
+  }
+
+  return (
+    <React.Fragment>
+      {patchClassNamesOfChildren(classNames, children)}
+    </React.Fragment>
+  );
+};
+
+export default PatchClasses;
+
