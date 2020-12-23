@@ -9,6 +9,8 @@ build
 dist
 .rpt2_cache
 
+**/.eslintcache
+
 # misc
 .DS_Store
 .env
@@ -20,3 +22,6 @@ dist
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+.idea/workspace.xml
+.idea/

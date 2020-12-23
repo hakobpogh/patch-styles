@@ -1,6 +1,6 @@
 {
   "name": "patch-styles",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "auto patch css/scss modules to children",
   "author": "hakobpogh",
   "license": "MIT",
@@ -8,20 +8,22 @@
   "main": "dist/index.js",
   "module": "dist/index.modern.js",
   "source": "src/index.tsx",
+  "types": "dist/index.d.ts",
   "engines": {
     "node": ">=10"
   },
   "scripts": {
-    "build": "microbundle-crl --no-compress --format modern,cjs",
-    "start": "microbundle-crl watch --no-compress --format modern,cjs",
+    "build": "microbundle-crl --no-compress --format modern,esm,cjs",
+    "start": "microbundle-crl watch --no-compress --format modern,esm,cjs",
     "prepare": "run-s build",
     "lint": "eslint .",
     "test": "run-s test:unit test:build",
     "test:build": "run-s build",
     "test:unit": "cross-env CI=1 react-scripts test --env=jsdom",
     "test:watch": "react-scripts test --env=jsdom",
-    "predeploy": "cd example && yarn install && yarn run build",
-    "deploy": "gh-pages -d example/build"
+    "predeploy": "yarn example && yarn example build",
+    "deploy": "gh-pages -d example/build",
+    "example": "yarn --cwd example"
   },
   "peerDependencies": {
     "react": "^16.0.0"
