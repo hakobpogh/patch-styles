@@ -20,7 +20,7 @@ yarn add patch-styles
 
 Instead of changing to use `classes.ClassName` just wrap your code with
 `<PatchStyles classNames={classes}>`. See the example below or open it in
-[StackBlitz](https://stackblitz.com/edit/react-mmlhw8?file=src/App.js).
+[StackBlitz](https://stackblitz.com/edit/react-patch-styles?file=src/App.js).
 
 ### Example
 

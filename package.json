@@ -1,7 +1,7 @@
 {
   "name": "patch-styles",
-  "version": "0.1.1",
-  "description": "auto patch css/scss modules to children",
+  "version": "0.2.0",
+  "description": "A declarative way for patching styles and switching to CSS/SCSS modules with just a few lines of code.",
   "author": "hakobpogh",
   "license": "MIT",
   "repository": "hakobpogh/patch-styles",
