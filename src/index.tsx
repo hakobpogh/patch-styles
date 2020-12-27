@@ -6,7 +6,7 @@ export interface Props {
   classNames: ClassNamesMap;
 }
 
-const PatchClasses: FC<PropsWithChildren<Props>> = ({ classNames, children }) => {
+const PatchStyles: FC<PropsWithChildren<Props>> = ({ classNames, children }) => {
   if (!children) {
     throw new Error('ApplyStyles should always have children to apply styles too');
   }
@@ -18,5 +18,5 @@ const PatchClasses: FC<PropsWithChildren<Props>> = ({ classNames, children }) =>
   );
 };
 
-export default PatchClasses;
+export default PatchStyles;
 
