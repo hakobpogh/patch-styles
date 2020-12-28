@@ -12,19 +12,28 @@ const mapAndMergeClassNames = (className: string | string[], namesMap: ClassName
   return splitNamesArr.map((name) => namesMap[name] ?? name).join(' ');
 };
 
-const patchClassNamesOfChildren = (namesMap: ClassNamesMap, children: ReactNode): ReactNode => {
+const getMappedProps = <T>(props: T, extraProps: string[], namesMap: ClassNamesMap): Partial<T> => {
+  const mappedProps: T = <T>{};
+  const propsToMap = Object.keys(props).filter((key) => key === 'className' || extraProps.includes(key));
+
+  propsToMap.forEach((key) => {
+    mappedProps[key] = mapAndMergeClassNames(props[key], namesMap);
+  });
+
+  return mappedProps;
+};
+
+const patchClassNamesOfChildren = (namesMap: ClassNamesMap, extraProps: string[], children: ReactNode): ReactNode => {
   return React.Children.map<ReactNode, ReactNode>(children, (child: ReactNode) => {
     if (!React.isValidElement<PropsWithChildren<ChildPropsType>>(child)) {
       return child;
     }
 
-    const { className } = child.props;
+    const mappedProps = getMappedProps(child.props, extraProps, namesMap);
 
-    const patchedChildren = patchClassNamesOfChildren(namesMap, child.props.children);
+    const patchedChildren = patchClassNamesOfChildren(namesMap, extraProps, child.props.children);
 
-    return React.cloneElement(child, className ? {
-      className: mapAndMergeClassNames(className, namesMap)
-    } : undefined, patchedChildren);
+    return React.cloneElement(child, mappedProps, patchedChildren);
   });
 };
 

@@ -4,16 +4,24 @@ import patchClassNamesOfChildren from './patch-class-names';
 
 export interface Props {
   classNames: ClassNamesMap;
+  extraProps?: string | string[] | null;
 }
 
-const PatchStyles: FC<PropsWithChildren<Props>> = ({ classNames, children }) => {
+const PatchStyles: FC<PropsWithChildren<Props>> = ({
+  classNames,
+  extraProps,
+  children
+}) => {
   if (!children) {
     throw new Error('ApplyStyles should always have children to apply styles too');
   }
 
+  const extraPropsArr = Array.isArray(extraProps) ? extraProps : [extraProps];
+  const extraPropsSplit = extraPropsArr.flatMap((props) => (props ?? '').split(/\s*,\s*/g));
+
   return (
     <React.Fragment>
-      {patchClassNamesOfChildren(classNames, children)}
+      {patchClassNamesOfChildren(classNames, extraPropsSplit, children)}
     </React.Fragment>
   );
 };

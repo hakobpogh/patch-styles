@@ -17,7 +17,7 @@
     "accessor-pairs": "off",
     "array-bracket-newline": ["error", "consistent"],
     "array-bracket-spacing": ["error", "never"],
-    "array-callback-return": ["error", { "allowImplicit": false, "checkForEach": true }],
+    "array-callback-return": ["error", { "allowImplicit": false, "checkForEach": false }],
     "array-element-newline": ["error", "consistent"],
     "arrow-body-style": ["off", "as-needed"],
     "arrow-parens": ["error", "always"],
