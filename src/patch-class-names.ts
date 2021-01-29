@@ -30,8 +30,11 @@ const patchClassNamesOfChildren = (namesMap: ClassNamesMap, extraProps: string[]
     }
 
     const mappedProps = getMappedProps(child.props, extraProps, namesMap);
-
     const patchedChildren = patchClassNamesOfChildren(namesMap, extraProps, child.props.children);
+
+    if (!Object.keys(mappedProps).length && !React.isValidElement(child.props.children)) {
+      return child;
+    }
 
     return React.cloneElement(child, mappedProps, patchedChildren);
   });

@@ -1,6 +1,6 @@
 import React, { FC } from "react";
-import PatchStyles from "patch-styles";
 import styles from "./FirstPage.module.css";
+import PatchStyles from "patch-styles";
 
 interface FirstPageProp {
   pageActiveClassName: string;
