@@ -24,6 +24,8 @@ Instead of changing to use `classes.ClassName` just wrap your code with
 See the example below or open an advanced example in
 [StackBlitz][stackblitz-example].
 
+PatchStyles also patches every prop which is a react node.
+
 ### Example
 
 ```tsx
@@ -53,6 +55,13 @@ const App = () => {
           >
             Learn React
           </a>
+
+          <CustomComponent
+            useFallback
+            fallbackElement={
+              <b className="fallback-node">Some Fallback Node</b>
+            }
+          />
         </header>
       </div>
     </PatchStyles>

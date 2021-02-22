@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PatchStyles from 'patch-styles';
 import styles from './App.module.css';
 import { Switch, Route, NavLink } from 'react-router-dom';
@@ -7,6 +7,8 @@ import SecondPage from "./pages/SecondPage";
 import ReactMarkdownPage from './pages/ReactMarkdown';
 
 const AppExample = () => {
+  const [showFooter, setShowFooter] = useState(false);
+
   return (
     <PatchStyles classNames={styles} extraProps={['activeClassName', 'pageActiveClassName']}>
       <nav className="navbar">
@@ -14,9 +16,23 @@ const AppExample = () => {
         <NavLink to="/second" className="nav-link" activeClassName="active">Second Page</NavLink>
         <NavLink to="/react-markdown" className="nav-link" activeClassName="active">ReactMarkdown Preview</NavLink>
       </nav>
+
+      <div>
+        <button onClick={() => setShowFooter(!showFooter)}>{ showFooter ? 'Hide' : 'Show' } Footer</button>
+      </div>
+
       <Switch>
         <Route path="/first">
-          <FirstPage pageActiveClassName="With-AquaMarine-Text" />
+          {
+            showFooter ? (
+              <FirstPage
+                pageActiveClassName="With-AquaMarine-Text"
+                footerNode={
+                  <div className="footer">Some Footer</div>
+                }
+              />
+            ) : <FirstPage pageActiveClassName="With-AquaMarine-Text" />
+          }
         </Route>
         <Route path="/second">
           <SecondPage pageActiveClassName="With-DeepPink-Text" />

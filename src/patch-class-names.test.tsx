@@ -1,5 +1,5 @@
-import React, { FC, ReactElement, ReactNode } from 'react';
-import patchClassNamesOfChildren from './patch-class-names';
+import React, { FC, ReactNode } from 'react';
+import patchClassNamesOfChildren from './helper-methods/patch-class-names-of-children';
 import { ClassNamesMap } from './utils';
 
 describe('patchClassNamesOfChildren()', () => {
@@ -34,10 +34,10 @@ const isPatchedNode = (original: ReactNode, patched: ReactNode, namesMap: ClassN
 const isPatchedNodeArrays = (original: ReactNode[], patched: ReactNode[], namesMap: ClassNamesMap, extraProps: string[]): boolean => {
   for (const node of original) {
   }
-}
+};
 
 const compareSingleNode = (original: ReactNode, patched: ReactNode, namesMap: ClassNamesMap, extraProps: string[]) => {
   if (!React.isValidElement(original)) {
     return
   }
-}
+};

@@ -1,14 +1,15 @@
-import React, { FC } from "react";
+import React, { FC, ReactNode } from "react";
 import styles from "./FirstPage.module.css";
 import PatchStyles from "patch-styles";
 
 interface FirstPageProp {
   pageActiveClassName: string;
+  footerNode?: ReactNode | null;
 }
 
 const REACT_LOGO = "https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg";
 
-const FirstPage: FC<FirstPageProp> = ({ pageActiveClassName = '' }) => {
+const FirstPage: FC<FirstPageProp> = ({ pageActiveClassName = '', footerNode }) => {
   return (
     <PatchStyles classNames={styles}>
       <div className={`FirstPage ${pageActiveClassName}`}>
@@ -26,6 +27,8 @@ const FirstPage: FC<FirstPageProp> = ({ pageActiveClassName = '' }) => {
             Learn React
           </a>
         </header>
+
+        {footerNode}
       </div>
     </PatchStyles>
   );

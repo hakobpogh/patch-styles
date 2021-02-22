@@ -1,17 +1,13 @@
 import React, { FC, PropsWithChildren } from 'react';
 import { ClassNamesMap } from './utils';
-import patchClassNamesOfChildren from './patch-class-names';
+import patchClassNamesOfChildren from './helper-methods/patch-class-names-of-children';
 
 export interface Props {
   classNames: ClassNamesMap;
   extraProps?: string | string[] | null;
 }
 
-const PatchStyles: FC<PropsWithChildren<Props>> = ({
-  classNames,
-  extraProps,
-  children
-}) => {
+const PatchStyles: FC<PropsWithChildren<Props>> = ({ classNames, extraProps, children }) => {
   if (!children) {
     throw new Error('ApplyStyles should always have children to apply styles too');
   }
@@ -27,4 +23,3 @@ const PatchStyles: FC<PropsWithChildren<Props>> = ({
 };
 
 export default PatchStyles;
-
