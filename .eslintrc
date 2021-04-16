@@ -136,7 +136,7 @@
     "no-lonely-if": "error",
     "no-loop-func": "error",
     "no-loss-of-precision": "error",
-    "no-magic-numbers": ["error", { "ignoreArrayIndexes": false, "ignoreDefaultValues": true }],
+    "no-magic-numbers": ["off", { "ignoreArrayIndexes": false, "ignoreDefaultValues": true }],
     "no-mixed-operators": "error",
     "no-mixed-spaces-and-tabs": "error",
     "no-multi-assign": "error",
@@ -528,7 +528,7 @@
         "@typescript-eslint/no-extraneous-class": ["error"],
         "@typescript-eslint/no-floating-promises": ["error"],
         "@typescript-eslint/no-for-in-array": "error",
-        "@typescript-eslint/no-implicit-any-catch": ["error", { "allowExplicitAny": true }],
+        "@typescript-eslint/no-implicit-any-catch": ["off", { "allowExplicitAny": true }],
         "@typescript-eslint/no-implied-eval": "error",
         "@typescript-eslint/no-inferrable-types": ["error"],
         "@typescript-eslint/no-invalid-this": "error",
@@ -536,7 +536,7 @@
         "@typescript-eslint/no-loop-func": "error",
         "@typescript-eslint/no-loss-of-precision": "error",
         "@typescript-eslint/no-magic-numbers": [
-          "error",
+          "off",
           { "ignoreDefaultValues": true, "ignoreEnums": true }
         ],
         "@typescript-eslint/no-misused-new": "error",

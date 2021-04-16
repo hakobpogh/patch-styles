@@ -3,6 +3,23 @@ import { ChildPropsType, ClassNamesMap } from '../utils';
 import getMappedClassNameProps from './get-mapped-class-name-props';
 
 const patchClassNamesOfChildren = (namesMap: ClassNamesMap, extraProps: string[], children: ReactNode): ReactNode => {
+  const childOrChildren = patchClassNamesWithChildrenMap(namesMap, extraProps, children);
+
+  if (!Array.isArray(children) && !React.isValidElement(children)) {
+    return children;
+  }
+
+  try {
+    React.Children.only(children);
+    return Array.isArray(childOrChildren) ? childOrChildren[0] : childOrChildren;
+  } catch (err) {
+    return childOrChildren;
+  }
+};
+
+export default patchClassNamesOfChildren;
+
+const patchClassNamesWithChildrenMap = (namesMap: ClassNamesMap, extraProps: string[], children: ReactNode): ReactNode => {
   return React.Children.map<ReactNode, ReactNode>(children, (child: ReactNode) => {
     if (!React.isValidElement<PropsWithChildren<ChildPropsType>>(child)) {
       return child;
@@ -11,8 +28,6 @@ const patchClassNamesOfChildren = (namesMap: ClassNamesMap, extraProps: string[]
     return patchClassNamesForReactNode(child, namesMap, extraProps);
   });
 };
-
-export default patchClassNamesOfChildren;
 
 type ChildElement = ReactElement<PropsWithChildren<ChildPropsType>>;
 

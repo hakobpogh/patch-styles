@@ -1,6 +1,6 @@
 {
   "name": "patch-styles",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "description": "A declarative way for patching styles and switching to CSS/SCSS modules with just a few lines of code.",
   "author": "hakobpogh",
   "license": "MIT",
@@ -67,5 +67,9 @@
   },
   "files": [
     "dist"
-  ]
+  ],
+  "dependencies": {
+    "@types/react-copy-to-clipboard": "^5.0.0",
+    "react-copy-to-clipboard": "^5.0.3"
+  }
 }
