@@ -2,22 +2,24 @@
   padding: 20px;
 }
 
-.navbar > :not(:first-of-type) {
-  margin-left: 10px;
-}
-
 .navbar .nav-link {
   text-decoration: none;
   padding: 10px;
   box-shadow: 0 0 4px -2px;
   border-radius: 4px;
   color: blue;
+  display: inline-block;
+  margin: 4px;
 }
 
 .navbar .nav-link.active {
   font-weight: bold;
   background: blue;
   color: white;
+}
+
+.page-content {
+  padding: 24px;
 }
 
 .With-DeepPink-Text {

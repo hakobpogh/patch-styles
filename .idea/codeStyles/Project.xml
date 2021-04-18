@@ -53,30 +53,12 @@
     <XML>
       <option name="XML_SPACE_INSIDE_EMPTY_TAG" value="true" />
     </XML>
-    <codeStyleSettings language="CSS">
-      <indentOptions>
-        <option name="INDENT_SIZE" value="2" />
-        <option name="CONTINUATION_INDENT_SIZE" value="2" />
-        <option name="TAB_SIZE" value="2" />
-      </indentOptions>
-    </codeStyleSettings>
-    <codeStyleSettings language="CoffeeScript">
-      <indentOptions>
-        <option name="CONTINUATION_INDENT_SIZE" value="4" />
-      </indentOptions>
-    </codeStyleSettings>
     <codeStyleSettings language="Dart">
       <option name="RIGHT_MARGIN" value="-1" />
       <option name="TERNARY_OPERATION_WRAP" value="1" />
       <option name="WRAP_ON_TYPING" value="0" />
       <indentOptions>
         <option name="CONTINUATION_INDENT_SIZE" value="2" />
-      </indentOptions>
-    </codeStyleSettings>
-    <codeStyleSettings language="Gherkin">
-      <indentOptions>
-        <option name="CONTINUATION_INDENT_SIZE" value="4" />
-        <option name="TAB_SIZE" value="2" />
       </indentOptions>
     </codeStyleSettings>
     <codeStyleSettings language="HTML">
@@ -87,23 +69,11 @@
         <option name="TAB_SIZE" value="2" />
       </indentOptions>
     </codeStyleSettings>
-    <codeStyleSettings language="Haml">
-      <indentOptions>
-        <option name="CONTINUATION_INDENT_SIZE" value="4" />
-        <option name="TAB_SIZE" value="2" />
-      </indentOptions>
-    </codeStyleSettings>
     <codeStyleSettings language="JSON">
       <option name="SPACE_WITHIN_BRACES" value="true" />
       <option name="WRAP_ON_TYPING" value="0" />
       <indentOptions>
         <option name="CONTINUATION_INDENT_SIZE" value="2" />
-        <option name="TAB_SIZE" value="2" />
-      </indentOptions>
-    </codeStyleSettings>
-    <codeStyleSettings language="Jade">
-      <indentOptions>
-        <option name="INDENT_SIZE" value="2" />
         <option name="TAB_SIZE" value="2" />
       </indentOptions>
     </codeStyleSettings>

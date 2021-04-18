@@ -19,33 +19,35 @@ const AppExample = () => {
         <NavLink to="/only-child" className="nav-link" activeClassName="active">Usage with only child Preview</NavLink>
       </nav>
 
-      <div>
-        <button onClick={() => setShowFooter(!showFooter)}>{ showFooter ? 'Hide' : 'Show' } Footer</button>
-      </div>
+      <div className="page-content">
+        <div>
+          <button onClick={() => setShowFooter(!showFooter)}>{ showFooter ? 'Hide' : 'Show' } Footer</button>
+        </div>
 
-      <Switch>
-        <Route path="/first">
-          {
-            showFooter ? (
-              <FirstPage
-                pageActiveClassName="With-AquaMarine-Text"
-                footerNode={
-                  <div className="footer">Some Footer</div>
-                }
-              />
-            ) : <FirstPage pageActiveClassName="With-AquaMarine-Text" />
-          }
-        </Route>
-        <Route path="/second">
-          <SecondPage pageActiveClassName="With-DeepPink-Text" />
-        </Route>
-        <Route path="/react-markdown">
-          <ReactMarkdownPage />
-        </Route>
-        <Route path="/only-child">
-          <UsageWithOnlyChildCheck />
-        </Route>
-      </Switch>
+        <Switch>
+          <Route path="/first">
+            {
+              showFooter ? (
+                <FirstPage
+                  pageActiveClassName="With-AquaMarine-Text"
+                  footerNode={
+                    <div className="footer">Some Footer</div>
+                  }
+                />
+              ) : <FirstPage pageActiveClassName="With-AquaMarine-Text" />
+            }
+          </Route>
+          <Route path="/second">
+            <SecondPage pageActiveClassName="With-DeepPink-Text" />
+          </Route>
+          <Route path="/react-markdown">
+            <ReactMarkdownPage />
+          </Route>
+          <Route path="/only-child">
+            <UsageWithOnlyChildCheck />
+          </Route>
+        </Switch>
+      </div>
     </PatchStyles>
   );
 };
