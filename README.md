@@ -5,6 +5,7 @@
 
 [![NPM](https://img.shields.io/npm/v/patch-styles.svg)][npm-patch-styles]
 [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)][js-style-guide]
+[![Minzipped Bundle Size](https://badgen.net/bundlephobia/minzip/patch-styles)][bundlephobia-link]
 
 ## Install
 
@@ -107,3 +108,4 @@ MIT © [hakobpogh][github-hakobpogh]
 [stackblitz-example]: https://stackblitz.com/edit/react-patch-styles?file=src/App.js
 [npm-patch-styles]: https://www.npmjs.com/package/patch-styles
 [js-style-guide]: https://standardjs.com
+[bundlephobia-link]: https://bundlephobia.com/result?p=patch-styles
