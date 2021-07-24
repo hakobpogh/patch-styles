@@ -24,3 +24,5 @@ yarn-debug.log*
 yarn-error.log*
 
 .idea/
+
+**/react-app-env.d.ts

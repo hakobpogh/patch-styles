@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import PatchStyles from 'patch-styles';
 import styles from './App.module.css';
-import { Switch, Route, NavLink } from 'react-router-dom';
-import FirstPage from "./pages/FirstPage";
-import SecondPage from "./pages/SecondPage";
+import { NavLink, Route, Switch } from 'react-router-dom';
+import FirstPage from './pages/FirstPage';
+import SecondPage from './pages/SecondPage';
 import ReactMarkdownPage from './pages/ReactMarkdown';
 import UsageWithOnlyChildCheck from './pages/CopyToClipboardUsagePage';
 
@@ -21,7 +21,7 @@ const AppExample = () => {
 
       <div className="page-content">
         <div>
-          <button onClick={() => setShowFooter(!showFooter)}>{ showFooter ? 'Hide' : 'Show' } Footer</button>
+          <button onClick={() => setShowFooter(!showFooter)}>{showFooter ? 'Hide' : 'Show'} Footer</button>
         </div>
 
         <Switch>
@@ -52,4 +52,4 @@ const AppExample = () => {
   );
 };
 
-export default AppExample
+export default AppExample;
