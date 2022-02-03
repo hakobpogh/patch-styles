@@ -1,6 +1,7 @@
 import React, { FC, ReactNode } from "react";
 import styles from "./FirstPage.module.css";
 import PatchStyles from "patch-styles";
+import { Header } from './FunctionClassName';
 
 interface FirstPageProp {
   pageActiveClassName: string;
@@ -12,8 +13,8 @@ const REACT_LOGO = "https://upload.wikimedia.org/wikipedia/commons/a/a7/React-ic
 const FirstPage: FC<FirstPageProp> = ({ pageActiveClassName = '', footerNode }) => {
   return (
     <PatchStyles classNames={styles}>
-      <div className={`FirstPage ${pageActiveClassName}`}>
-        <header className="FirstPage-header Some-class">
+      <div className={`FirstPage`}>
+        <Header className={(className) => `FirstPage-header ${className}`}>
           <img src={REACT_LOGO} className="FirstPage-logo" alt="React Logo" />
           <p>
             Edit <code>src/App.tsx</code> and save to reload.
@@ -26,7 +27,7 @@ const FirstPage: FC<FirstPageProp> = ({ pageActiveClassName = '', footerNode }) 
           >
             Learn React
           </a>
-        </header>
+        </Header>
 
         {footerNode}
       </div>
